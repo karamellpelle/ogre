@@ -239,11 +239,12 @@ function(ogre_config_framework LIBNAME)
   if (OGRE_BUILD_LIBS_AS_FRAMEWORKS)
       set_target_properties(${LIBNAME} PROPERTIES FRAMEWORK TRUE)
 
+      # karamellpelle: removed
       # Set the INSTALL_PATH so that frameworks can be installed in the application package
-      set_target_properties(${LIBNAME}
-         PROPERTIES BUILD_WITH_INSTALL_RPATH 1
-         INSTALL_NAME_DIR "@executable_path/../Frameworks"
-      )
+      #set_target_properties(${LIBNAME}
+      #   PROPERTIES BUILD_WITH_INSTALL_RPATH 1
+      #   INSTALL_NAME_DIR "@executable_path/../Frameworks"
+      #)
       set_target_properties(${LIBNAME} PROPERTIES PUBLIC_HEADER "${HEADER_FILES};${PLATFORM_HEADERS};" )
       set_target_properties(${LIBNAME} PROPERTIES RESOURCE "${RESOURCE_FILES}")
       set_source_files_properties("${RESOURCE_FILES}" PROPERTIES MACOSX_PACKAGE_LOCATION Resources)

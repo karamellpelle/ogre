@@ -456,6 +456,9 @@ endif()
 # install resource files
 include(InstallResources)
 
+# karamellpelle: needed by subdirectories
+include_directories( "${CMAKE_BINARY_DIR}/include/" )
+
 # enable PCH support
 include(PrecompiledHeader)
 
